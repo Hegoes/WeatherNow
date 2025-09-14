@@ -1,0 +1,120 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #2a2b4b, #5d406a);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.weather-card {
+    background: rgba(9, 8, 8, 0.15);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    padding: 32px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    transform: scale(0.95);
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.fade-in-down {
+    animation: fadeInDown 0.6s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.weather-icon {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    display: block;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+#locationInput, #searchBtn {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+#locationInput:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #fff;
+}
+
+#searchBtn {
+    cursor: pointer;
+    background: #5a5a8e;
+    font-weight: 600;
+}
+
+#searchBtn:hover {
+    background: #6e6eb7;
+}
+
+.temp {
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1;
+    color: #ffeb3b; /* Bright yellow for temperature */
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 16px;
+}
+
+.detail-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.detail-item:hover {
+    transform: translateY(-5px);
+}
+
+.detail-item i {
+    color: #8bc34a; /* Vibrant green for icons */
+}
